@@ -1,12 +1,12 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import './App.css'
-import Footer from './layouts/Footer'
-import Header from './layouts/Header'
-import Main from './layouts/Main'
+
 import HomePage from './pages/HomePage'
 import ProdutosPage from './pages/ProdutosPage'
 import ContatoPage from './pages/ContatoPage'
+import ServicoPage from './pages/ServicoPage'
+import DetalhesServicoPage from './pages/ServicoPage/DetalhesServicoPage'
 
 function App() {
 
@@ -14,8 +14,10 @@ function App() {
     { path: "/", element: <HomePage /> },
     { path: "/produtos", element: <ProdutosPage /> },
     { path: "/contato", element: <ContatoPage /> },
+    { path: "/servicos", element: <ServicoPage /> },
+    { path: "/servicos-detalhes/:codigo", element: <DetalhesServicoPage /> },
+    { path: '*', element: <h1>404 - Nao encontrada</h1> },
   ])
-
 
   return (
     <>
@@ -23,7 +25,6 @@ function App() {
     </>
   )
 
- 
 }
 
 export default App

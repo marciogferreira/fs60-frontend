@@ -1,10 +1,20 @@
+
 import Footer from "../../layouts/Footer"
 import Header from "../../layouts/Header"
 import Main from "../../layouts/Main"
+import Menu from "../../layouts/Menu"
 
 function ProdutosPage() {
+
+    const taLogado = true
+
+    if(taLogado === false) {
+        return <h1>Sem Permissao</h1>
+    }
+
     return (
         <>
+            <Menu />
             <Header 
                 titulo="DigitalStore"
                 image="Image da Logomarca"

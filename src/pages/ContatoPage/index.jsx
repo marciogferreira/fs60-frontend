@@ -1,6 +1,9 @@
+import Menu from "../../layouts/Menu"
+
 function ContatoPage() {
     return (
         <>
+             <Menu />
             ContatoPage
         </>
     )
