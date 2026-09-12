@@ -6,12 +6,20 @@ import RotasPrivadas from './routes/RotasPrivadas';
 function App() {
 
   const[isLogged, setIsLogged] = useState(false);
-  
-  if(isLogged) {
-    return <RotasPrivadas />
+
+  function autorizarLogin() {
+    setIsLogged(true)
   }
 
-  return <RotasPublicas />
+  function autorizarLogout() {
+    setIsLogged(false)
+  }
+  
+  if(isLogged) {
+    return <RotasPrivadas autorizarLogout={autorizarLogout} />
+  }
+
+  return <RotasPublicas autorizarLogin={autorizarLogin} />
 
 }
 

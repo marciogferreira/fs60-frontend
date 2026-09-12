@@ -1,8 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
+import DashboardPage from "../pages/auth/DashboardPage"
 
-export default function RotasPrivadas() {
+export default function RotasPrivadas(props) {
     const rotas = createBrowserRouter([
-        { path: "/", element: <h1>Dashboard</h1> }
+        { path: "/", element: <DashboardPage autorizarLogout={props.autorizarLogout} /> }
     ])
     return <RouterProvider router={rotas} />
 }

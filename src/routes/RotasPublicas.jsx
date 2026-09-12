@@ -4,10 +4,13 @@ import ProdutosPage from "../pages/ProdutosPage"
 import ContatoPage from "../pages/ContatoPage"
 import ServicoPage from "../pages/ServicoPage"
 import DetalhesServicoPage from "../pages/ServicoPage/DetalhesServicoPage"
+import LoginPage from "../pages/LoginPage"
 
-export default function RotasPublicas() {
+export default function RotasPublicas(props) {
+
     const rotas = createBrowserRouter([
         { path: "/", element: <HomePage /> },
+        { path: "/login", element: <LoginPage autorizarLogin={props.autorizarLogin} /> },
         { path: "/produtos", element: <ProdutosPage /> },
         { path: "/contato", element: <ContatoPage /> },
         { path: "/servicos", element: <ServicoPage /> },
