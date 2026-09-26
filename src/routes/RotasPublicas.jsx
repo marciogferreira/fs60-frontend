@@ -6,6 +6,7 @@ import ServicoPage from "../pages/ServicoPage"
 import DetalhesServicoPage from "../pages/ServicoPage/DetalhesServicoPage"
 import LoginPage from "../pages/LoginPage"
 import CrudPage from "../pages/CrudPage"
+import ProdutosPageA from "../pages/auth/ProdutosPageA"
 
 export default function RotasPublicas(props) {
 
@@ -13,7 +14,7 @@ export default function RotasPublicas(props) {
         { path: "/", element: <HomePage /> },
         { path: "/rest", element: <CrudPage />  },
         { path: "/login", element: <LoginPage autorizarLogin={props.autorizarLogin} /> },
-        { path: "/produtos", element: <ProdutosPage /> },
+        { path: "/produtos", element: <ProdutosPageA /> },
         { path: "/contato", element: <ContatoPage /> },
         { path: "/servicos", element: <ServicoPage /> },
         { path: "/servicos-detalhes/:codigo", element: <DetalhesServicoPage /> },
