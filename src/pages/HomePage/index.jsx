@@ -3,6 +3,7 @@ import Menu from "../../layouts/Menu"
 import { useState } from 'react'
 
 function HomePage() {
+    
     const[nome, setNome] = useState('Max')
     
     function mudarNome() {
