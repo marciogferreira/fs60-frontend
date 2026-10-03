@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import api from "../../../core/Api"
+import { useNavigate } from "react-router"
 function ProdutosPageA() {
-
+    const navigate = useNavigate()
     const[produtos, setProdutos] = useState([])
     const[pesquisa, setPesquisa] = useState(null)
-
     async function listarDados() {
         const response = await api.get('products')
-        setProdutos(response.data)
+        setProdutos(response.data.products)
     }
-    
     async function deletarDados(id) {
         const check = confirm("Deseja deletar este produto?")
         if(check) {
@@ -18,10 +17,9 @@ function ProdutosPageA() {
             listarDados()
         }
     }
-
     useEffect(() => {
         listarDados()
-    }, [])    
+    }, [])
     // https://dontpad.com/fs60/aula29
     return (
         <>
@@ -34,7 +32,7 @@ function ProdutosPageA() {
                         </form>
                     </div>
                     <div className="col-md-6 d-flex justify-content-end">
-                        <button className="btn btn-success btn-sm">
+                        <button onClick={() => navigate('/produtos/novo')} className="btn btn-success btn-sm">
                             Novo
                         </button>
                     </div>
@@ -70,7 +68,7 @@ function ProdutosPageA() {
                                     <img height={50} src={produto.image} alt="" />
                                 </td>
                                 <td style={{ width: '150px' }}>
-                                    <button className="btn btn-primary btn-sm">
+                                    <button onClick={() => navigate(`/produtos/editar/${produto.id}`)} className="btn btn-primary btn-sm">
                                         Editar
                                     </button>&nbsp;
                                     <button onClick={() => deletarDados(produto.id)} className="btn btn-danger btn-sm">
