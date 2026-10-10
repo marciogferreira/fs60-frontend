@@ -3,27 +3,11 @@ import Menu from "../../layouts/Menu"
 import { useState } from 'react'
 
 function HomePage() {
-    
-    const[nome, setNome] = useState('Max')
-    
-    function mudarNome() {
-        setNome('Marcio Ferreira')
-    }
 
-    function mudarNomeMax() {
-        setNome('Max')
-    }
-    
     return (
-        <div style={{ backgroundColor: 'yellow' }}>
+        <div>
             <Menu />
-            <Contador />
-            <Contador />
-            <Contador />
-            {nome} <br />
-            <button onClick={mudarNome}>Mudar Nome</button>
-            <button onClick={mudarNomeMax}>Voltar Nome</button>
-            HomePage
+            HomePage - Melhorar a Tela para paracer com uma tela de Loja Virtual
         </div>
     )
 }
