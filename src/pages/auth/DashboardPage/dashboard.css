@@ -1,0 +1,180 @@
+.dashboard {
+          min-height: 100vh;
+          background: #f4f6fa;
+          color: #202938;
+          font-family: Inter, system-ui, sans-serif;
+        }
+
+        .dashboard-sidebar {
+          position: fixed;
+          inset: 0 auto 0 0;
+          width: 250px;
+          background: #101827;
+          color: white;
+          padding: 26px 18px;
+          display: flex;
+          flex-direction: column;
+          z-index: 100;
+        }
+
+        .dashboard-brand {
+          font-size: 1.35rem;
+          font-weight: 700;
+          padding: 0 8px 40px;
+        }
+
+        .dashboard-brand i { color: #6d9cff; }
+
+        .dashboard-menu-label {
+          color: #94a3b8;
+          font-size: .7rem;
+          letter-spacing: 1px;
+          padding: 0 10px 15px;
+        }
+
+        .dashboard-sidebar .nav-link {
+          color: #c0cad8;
+          padding: 12px;
+          border: 0;
+          border-radius: 9px;
+          background: transparent;
+        }
+
+        .dashboard-sidebar .nav-link:hover,
+        .dashboard-sidebar .nav-link.active {
+          color: white;
+          background: #2b4775;
+        }
+
+        .dashboard-sidebar-footer {
+          margin-top: auto;
+          padding: 18px 8px 0;
+          border-top: 1px solid #344054;
+          color: #d5deed;
+        }
+
+        .dashboard-main {
+          margin-left: 250px;
+          padding: 28px;
+          min-width: 0;
+        }
+
+        .dashboard-topbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 32px;
+          padding-bottom: 22px;
+          border-bottom: 1px solid #e5e9f0;
+        }
+
+        .dashboard-avatar {
+          background: #dce7ff;
+          color: #2457b8;
+          width: 43px;
+          height: 43px;
+          border-radius: 50%;
+          display: grid;
+          place-items: center;
+          font-weight: 700;
+        }
+
+        .dashboard .card {
+          border: 1px solid #e9edf4;
+          border-radius: 14px;
+          box-shadow: 0 3px 15px rgb(30 50 80 / 4%);
+        }
+
+        .dashboard-stat {
+          transition: transform .2s ease;
+        }
+
+        .dashboard-stat:hover {
+          transform: translateY(-3px);
+        }
+
+        .dashboard-stat-icon {
+          background: #f0f4fb;
+          border-radius: 10px;
+          padding: 10px 13px;
+          font-size: 1.25rem;
+        }
+
+        .dashboard-chart {
+          height: 240px;
+          display: flex;
+          gap: 12px;
+          align-items: stretch;
+          padding-top: 15px;
+          border-bottom: 1px solid #e5e9f0;
+        }
+
+        .dashboard-chart-column {
+          flex: 1;
+          min-width: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .dashboard-chart-bar {
+          width: 100%;
+          max-width: 36px;
+          min-height: 4px;
+          background: #528bff;
+          border-radius: 6px 6px 0 0;
+          transition: opacity .2s;
+        }
+
+        .dashboard-chart-bar:hover { opacity: .7; }
+
+        .dashboard-chart-column small {
+          color: #7b8798;
+          font-size: .75rem;
+          padding-bottom: 8px;
+        }
+
+        .dashboard .progress {
+          height: 9px;
+          background: #e7edf7;
+        }
+
+        .dashboard .progress-bar { background: #3978f6; }
+
+        .dashboard .table th {
+          color: #778397;
+          font-size: .82rem;
+          white-space: nowrap;
+        }
+
+        .dashboard .table td {
+          font-size: .9rem;
+          white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+          .dashboard-sidebar {
+            position: static;
+            width: 100%;
+            padding: 15px;
+          }
+
+          .dashboard-brand { padding-bottom: 18px; }
+
+          .dashboard-sidebar .nav {
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+
+          .dashboard-sidebar-footer { margin-top: 20px; }
+
+          .dashboard-main {
+            margin-left: 0;
+            padding: 18px 12px;
+          }
+
+          .dashboard-chart { gap: 5px; }
+        }

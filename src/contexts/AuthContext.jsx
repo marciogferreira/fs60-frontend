@@ -5,9 +5,10 @@ export const AuthContext = createContext({})
 export default function AuthProvider(props) {
 
     const[isLogged , setIsLogged] = useState(false)
+    const[user, setUser] = useState(null)
 
-    function login() {
-        // Login com Backend
+    function login(userData) {
+        setUser(userData)
         setIsLogged(true)
     }
 
