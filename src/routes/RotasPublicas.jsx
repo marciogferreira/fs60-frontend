@@ -13,7 +13,7 @@ export default function RotasPublicas(props) {
     const rotas = createBrowserRouter([
         { path: "/", element: <HomePage /> },
         { path: "/rest", element: <CrudPage />  },
-        { path: "/login", element: <LoginPage autorizarLogin={props.autorizarLogin} /> },
+        { path: "/login", element: <LoginPage /> },
         { path: "/produtos", element: <ProdutosPageA /> },
 
         { path: "/produtos/novo", element: <FormProdutosPage /> },

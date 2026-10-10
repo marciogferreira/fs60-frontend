@@ -1,25 +1,18 @@
 import './App.css'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import RotasPublicas from './routes/RotasPublicas';
 import RotasPrivadas from './routes/RotasPrivadas';
+import { AuthContext } from './contexts/AuthContext';
 
 function App() {
 
-  const[isLogged, setIsLogged] = useState(false);
-
-  function autorizarLogin() {
-    setIsLogged(true)
-  }
-
-  function autorizarLogout() {
-    setIsLogged(false)
-  }
+  const { isLogged } = useContext(AuthContext)
   
   if(isLogged) {
-    return <RotasPrivadas autorizarLogout={autorizarLogout} />
+    return <RotasPrivadas />
   }
 
-  return <RotasPublicas autorizarLogin={autorizarLogin} />
+  return <RotasPublicas />
 
 }
 

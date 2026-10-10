@@ -3,7 +3,7 @@ import DashboardPage from "../pages/auth/DashboardPage"
 
 export default function RotasPrivadas(props) {
     const rotas = createBrowserRouter([
-        { path: "/", element: <DashboardPage autorizarLogout={props.autorizarLogout} /> }
+        { path: "/", element: <DashboardPage /> }
     ])
     return <RouterProvider router={rotas} />
 }

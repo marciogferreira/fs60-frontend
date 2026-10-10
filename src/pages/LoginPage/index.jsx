@@ -1,6 +1,10 @@
+import { useContext } from "react"
 import { useNavigate } from "react-router"
+import { AuthContext } from "../../contexts/AuthContext"
 
-export default function LoginPage(props) {
+export default function LoginPage() {
+
+    const { login } = useContext(AuthContext)
 
     const navigation = useNavigate()
     function realizarLogin() {
@@ -9,7 +13,8 @@ export default function LoginPage(props) {
         // VERIFICA SE RETORNA TOKEN
         // AUTORIZANDO NO FRONTEND
         navigation('/')
-        props.autorizarLogin()
+        login()
+       
     }
 
     return (
