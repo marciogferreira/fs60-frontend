@@ -45,14 +45,14 @@ export default function LoginPage() {
                                         <h3 className="text-center">Sistema DC</h3>
                                     </div>
                                     <div className="mt-3">
-                                        <label>Login</label>
+                                        <label>Login - emilys</label>
                                         <Field id="login" name="login" className="form-control" />
                                         <div className="error">
                                             <ErrorMessage name="login" />
                                         </div>
                                     </div>
                                     <div  className="mt-3">
-                                        <label>Senha</label>
+                                        <label>Senha - emilyspass</label>
                                         <Field id="password" name="password" type="password" className="form-control" />
                                         <div className="error">
                                             <ErrorMessage name="password" />

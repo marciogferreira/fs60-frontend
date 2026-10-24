@@ -1,6 +1,4 @@
-import Contador from "../../components/Contador"
 import Menu from "../../layouts/Menu"
-import { useState } from 'react'
 
 function HomePage() {
 

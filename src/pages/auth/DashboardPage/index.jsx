@@ -1,7 +1,8 @@
 
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import './dashboard.css'
 import { AuthContext } from '../../../contexts/AuthContext'
+import api from '../../../core/Api';
 
 const stats = [
   { title: 'Clientes', value: '2.450', change: '+12,5%', icon: 'bi-people', color: 'primary' },
@@ -34,10 +35,10 @@ const initialOrders = [
 
 export default function Dashboard() {
 
-    const { logout } = useContext(AuthContext);
-    const [active, setActive] = useState('Dashboard');
-    const [filter, setFilter] = useState('Todos');
-    const [search, setSearch] = useState('');
+  const { logout } = useContext(AuthContext);
+  const [active, setActive] = useState('Dashboard');
+  const [filter, setFilter] = useState('Todos');
+  const [search, setSearch] = useState('');
 
   const menu = [
     { label: 'Dashboard', icon: 'bi-grid-1x2' }
@@ -61,13 +62,22 @@ export default function Dashboard() {
     value.toLocaleString('pt-BR', {
       style: 'currency',
       currency: 'BRL',
-    });
+  });
 
   const statusClass = {
     'Concluído': 'text-bg-success',
     'Pendente': 'text-bg-warning',
     'Em análise': 'text-bg-info',
   };
+
+  async function getDataUser() {
+    const response = await api.get('/auth/me')
+    console.log(response)
+  }
+
+  useEffect(() => {
+    getDataUser()
+  }, [])
 
   return (
     <>

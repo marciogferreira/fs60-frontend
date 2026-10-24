@@ -3,7 +3,7 @@ const api = axios.create({
     // baseURL: 'https://fakestoreapi.com/',
     baseURL: 'https://dummyjson.com/',
     headers: {
-        "token": null
+        "Authorization": `Bearer ${localStorage.getItem('token-fs60')}`
     }
 })
 // api.get('products')
